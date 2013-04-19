@@ -1,0 +1,16 @@
+{
+  "type": "record",
+  "name": "appevent",
+  "namespace": "com.cloudera.flume.flumelog4jtest",
+  "doc": "An application event",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long"
+    },
+    {
+      "name": "message",
+      "type": "string"
+    }
+  ]
+}
