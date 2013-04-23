@@ -23,11 +23,6 @@ public class LogTestApp {
     Schema schema = new Schema.Parser().parse(
         Resources.getResource("appevent.avsc").openStream());
 
-    // Optional optimization. Assign an ID to the schema so that Flume events don't
-    // have to carry the schema. The ID is arbitrary, but must match one defined in the
-    // flume properties file, where the schema definition is given.
-    MDC.put("flume.client.log4j.avro.schema.id", 1);
-
     GenericRecordBuilder builder = new GenericRecordBuilder(schema);
     for (long i = 0; i < 10; i++) {
       GenericRecord appEvent = builder.set("id", i)
